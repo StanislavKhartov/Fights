@@ -50,19 +50,19 @@ int main()
 	cin >> fights;
 	set <long long> answer;
 	// polong longA
-	if (searchTwin(2 * fights) != -1)
+	if ((searchTwin(2 * fights) != -1) && (searchTwin(2 * fights)%2 != 0))
 	{
 		answer.insert(searchTwin(2 * fights));
 	}
 	long long powerOf2 = maxPower(fights);
 	long long oddNumber = fights;
-	for (int i = 0; i < powerOf2; i++)
+	for (long long i = 0; i < powerOf2; i++)
 	{
 		oddNumber = oddNumber / 2;
 	}
 	// search odd divisors in oddNumber
 	set <long long> oddDivisors;
-	for (int i = 1; i <= oddNumber / 2; i++)
+	for (long long i = 1; i <= sqrt(oddNumber); i++)
 	{
 		if (oddNumber % i == 0)
 		{
